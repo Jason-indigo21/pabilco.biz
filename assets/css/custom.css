@@ -1,0 +1,30 @@
+.topbar {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.topbar li {
+    font-size: 16px;
+    color: #fff;
+}
+
+.topbar li a {
+    color: #fff;
+}
+
+.topbar li i {
+    padding-right: 8px;
+}
+
+.topbar ul.language li {
+    margin-left: 15px;
+}
+
+/* HOME */
+.home-img-1 img {
+    border-radius: 10px;
+}
+.home-service-1-2 {
+    height: 150px; 
+    object-fit: cover;
+}
