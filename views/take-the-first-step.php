@@ -21,7 +21,7 @@
         </div>
         <div class="row g-5 mt--30">
             <div class="col-lg-12">
-                <div class="tmp-contact-address mt_dec--30">
+                <div class="tmp-contact-address mt_dec--30  ">
                     <div class="row g-5">
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="tmp-address tmponhover">
@@ -102,7 +102,7 @@
                                 </li>
                             </ul>
                             <h5><?= $isEn ? "So it's worth talking." : "Entonces vale la pena conversar." ?></h5>
-                                <p><?= $isEn ? "We work with organizations that seek clarity, structure, and sustainable results, not quick fixes without real impact." : "Trabajamos con organizaciones que buscan claridad, estructura y resultados sostenibles, no con soluciones rápidas sin impacto real." ?></p>
+                            <p><?= $isEn ? "We work with organizations that seek clarity, structure, and sustainable results, not quick fixes without real impact." : "Trabajamos con organizaciones que buscan claridad, estructura y resultados sostenibles, no con soluciones rápidas sin impacto real." ?></p>
                         </div>
                     </div>
                 </div>
@@ -192,30 +192,71 @@
                 </div>
             </div>
             <div class="col-lg-7">
-                <form class="contact-form-1 appoinment-form-wrapper tmponhover tmp-dynamic-form" id="contact-form" method="POST" action="mail.php">
+                <form class="contact-form-1 appoinment-form-wrapper tmponhover" id="" method="POST" action="mailFunction.php">
+                    <?php
+                    if (session_status() === PHP_SESSION_NONE) {
+                        session_start();
+                    }
+                    if (empty($_SESSION['csrf_token'])) {
+                        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+                    }
+                    ?>
+                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
+                    <input type="hidden" name="lang" value="<?= $isEn ? 'en' : 'es' ?>">
                     <div class="form-group-wrapper">
                         <div class="form-group tmponhover">
-                            <input type="text" name="contact-name" id="contact-name" placeholder="Your Name" required="">
+                            <input type="text" name="name" id="contact-name" placeholder="<?= $isEn ? 'Your Name' : 'Tu Nombre' ?>" required="">
                         </div>
-                        <div class="form-group tmponhover"> 
-                            <input type="tel" name="contact-phone" id="contact-phone" placeholder="Phone Number">
+                        
+                        <div class="form-group tmponhover">
+                            <input type="tel" name="phone" id="contact-phone" placeholder="<?= $isEn ? 'Phone Number' : 'Numero de Telefono' ?>">
                         </div>
                     </div>
                     <div class="form-group tmponhover">
-                        <input type="email" id="contact-email" name="contact-email" placeholder="Your Email" required="">
+                        <input type="email" id="contact-email" name="email" placeholder="<?= $isEn ? 'Your Email' : 'Tu Correo' ?>" required="">
                     </div>
 
                     <div class="form-group tmponhover">
-                        <input type="text" id="subject" name="subject" placeholder="Your Subject">
+                        <input type="text" id="subject" name="subject" placeholder="<?= $isEn ? 'Your Subject' : 'Tu Asunto' ?>">
                     </div>
 
                     <div class="form-group tmponhover">
-                        <textarea name="contact-message" id="contact-message" placeholder="Your Message"></textarea>
+                        <textarea name="message" id="contact-message" placeholder="<?= $isEn ? 'Your Message' : 'Tu Mensaje' ?>"></textarea>
                     </div>
-
                     <div class="form-group tmponhover">
-                        <button name="submit" type="submit" id="submit" class="btn-default btn-large tmp-btn" style="width: 100%;">
-                            <span>Submit Now</span>
+                        <input type="text" id="captcha_mail" name="captcha" hidden>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group ">
+                                        <input type="text" class="form-control text-3 custom-border-color-grey-1 h-auto py-2" id="submit"
+                                            placeholder="<?= $isEn ? 'Captcha' : 'Captcha' ?>" />
+                                    </div>
+                                </div>
+                                <div class="col-md-1 mt-2 text-center">
+                                    <div onclick="generate()">
+                                        <i class="feather-refresh-cw"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control text-3 custom-border-color-grey-1 h-auto py-2"
+                                            style="text-decoration:line-through;text-align:center; font-style: italic; display:block;"
+                                            id="captchandler" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 ml-2">
+                                    <button type="button" id="btnCheck" class="btn-default btn-large tmp-btn" style="width: 100%;"
+                                        onclick="printmsg()">
+                                        <?= $isEn ? 'Check' : 'Verificar' ?> </button>
+                                </div>
+                            </div>
+                            <p id="key" style="color:green; font-weight:bold; padding:10px 5px;"></p>
+                        </div>
+                    </div>
+                    <div class="form-group tmponhover">
+                        <button name="submit" type="submit" id="" class="btn-default btn-large tmp-btn" style="width: 100%;">
+                            <?= $isEn ? 'Submit Now' : 'Enviar Ahora' ?>
                         </button>
                     </div>
                 </form>

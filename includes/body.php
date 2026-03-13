@@ -20,6 +20,9 @@ if (isset($_REQUEST["lang"]) && $_REQUEST["lang"] == "en") {
             case 'take-the-first-step':
                 include("views/take-the-first-step.php");
                 break;
+            case 'online-agenda':
+                include("views/online-agenda.php");
+                break;
             default:
                 include("views/home.php");
         }
@@ -46,6 +49,9 @@ if (isset($_REQUEST["lang"]) && $_REQUEST["lang"] == "en") {
                 break;
             case 'da-el-primer-paso':
                 include("views/take-the-first-step.php");
+                break;
+            case 'agenda-online':
+                include("views/online-agenda.php");
                 break;
             default:
                 include("views/home.php");
