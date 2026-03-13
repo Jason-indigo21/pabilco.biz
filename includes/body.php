@@ -8,8 +8,17 @@ if (isset($_REQUEST["lang"]) && $_REQUEST["lang"] == "en") {
             case 'about':
                 include("views/about.php");
                 break;
+            case 'faqs':
+                include("views/faqs.php");
+                break;
             case 'contact':
                 include("views/contact.php");
+                break;
+            case 'services':
+                include("views/services.php");
+                break;
+            case 'take-the-first-step':
+                include("views/take-the-first-step.php");
                 break;
             default:
                 include("views/home.php");
@@ -29,6 +38,15 @@ if (isset($_REQUEST["lang"]) && $_REQUEST["lang"] == "en") {
             case 'contact':
                 include("views/contact.php");
                 break;
+            case 'faqs':
+                include("views/faqs.php");
+                break;
+            case 'servicio':
+                include("views/services.php");
+                break;
+            case 'da-el-primer-paso':
+                include("views/take-the-first-step.php");
+                break;
             default:
                 include("views/home.php");
         }
@@ -36,5 +54,3 @@ if (isset($_REQUEST["lang"]) && $_REQUEST["lang"] == "en") {
         include("views/home.php");
     }
 }
-
-?>

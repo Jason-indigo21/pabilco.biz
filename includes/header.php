@@ -77,13 +77,13 @@
                                                 <ul class="submenu">
                                                     <?php foreach ($value as $subkey => $subvalue) { ?>
                                                         <li><a
-                                                                href="?<?= $isEn ? 'page=' . $subkey : 'página=' . $subkey; ?>"><?= $subvalue; ?></a>
+                                                                href="?<?= $isEn ? 'page=services&service=' . $subkey . '&lang=en' : 'página=servicio&servicio=' . $subkey; ?>"><?= $subvalue; ?></a>
                                                         </li>
                                                     <?php } ?>
                                                 </ul>
                                             </li>
                                         <?php } else { ?>
-                                            <li><a href="?<?= $isEn ? 'page=' . $key : 'página=' . $key; ?>"><?= $value; ?></a>
+                                            <li><a href="?<?= $isEn ? 'page=' . $key .'&lang=en' : 'página=' . $key; ?>"><?= $value; ?></a>
                                             </li>
                                         <?php }
                                     }
