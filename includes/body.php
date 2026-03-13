@@ -5,23 +5,32 @@ if (isset($_REQUEST["lang"]) && $_REQUEST["lang"] == "en") {
             case 'home':
                 include("views/home.php");
                 break;
-            case 'about':
-                include("views/about.php");
+            case 'what-we-do':
+                include("views/services.php");
+                break;
+            case 'where-we-add-value':
+                include("views/where-we-add-value.php");
+                break;
+            case 'tecnology-that-drives-results':
+                include("views/tecnology-that-drives-results.php");
+                break;
+            case 'why-we-do-what-we-do':
+                include("views/why-we-do-what-we-do.php");
                 break;
             case 'faqs':
                 include("views/faqs.php");
-                break;
-            case 'contact':
-                include("views/contact.php");
-                break;
-            case 'services':
-                include("views/services.php");
                 break;
             case 'take-the-first-step':
                 include("views/take-the-first-step.php");
                 break;
             case 'online-agenda':
                 include("views/online-agenda.php");
+                break;
+            case 'cookies-policy':
+                include("views/cookies-policy.php");
+                break;
+            case 'privacy-policy':
+                include("views/privacy-policy.php");
                 break;
             default:
                 include("views/home.php");
@@ -32,26 +41,35 @@ if (isset($_REQUEST["lang"]) && $_REQUEST["lang"] == "en") {
 } else {
     if (isset($_REQUEST['página'])) {
         switch ($_REQUEST['página']) {
-            case 'home':
+            case 'inicio':
                 include("views/home.php");
                 break;
-            case 'about':
-                include("views/about.php");
+            case 'lo-qué-hacemos':
+                include("views/services.php");
                 break;
-            case 'contact':
-                include("views/contact.php");
+            case 'dónde-aportamos-valor':
+                include("views/where-we-add-value.php");
+                break;
+            case 'tecnología-que-impulsa-resultados':
+                include("views/tecnology-that-drives-results.php");
+                break;
+            case 'porque-hacemos-lo-que-hacemos':
+                include("views/why-we-do-what-we-do.php");
                 break;
             case 'faqs':
                 include("views/faqs.php");
                 break;
-            case 'servicio':
-                include("views/services.php");
-                break;
             case 'da-el-primer-paso':
                 include("views/take-the-first-step.php");
                 break;
-            case 'agenda-online':
+             case 'agenda-online':
                 include("views/online-agenda.php");
+                break;
+            case 'política-de-cookies':
+                include("views/cookies-policy.php");
+                break;
+            case 'política-de-privacidad':
+                include("views/privacy-policy.php");
                 break;
             default:
                 include("views/home.php");
@@ -60,3 +78,5 @@ if (isset($_REQUEST["lang"]) && $_REQUEST["lang"] == "en") {
         include("views/home.php");
     }
 }
+
+?>

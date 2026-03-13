@@ -14704,6 +14704,7 @@ main.business-coatch .thumbnail-banner-business-coatch img {
   background: var(--color-card);
   padding: 30px;
   border-radius: 6px;
+  min-height: 400px;
 }
 .signle-fun-facts-one .icon {
   height: 92px;
@@ -17988,8 +17989,8 @@ Timeline Area
 }
 
 .bg-cta-modern {
-  background-image: url(../images/call-to-action/02.jpg);
-  height: 290px;
+  background-image: url(../img/about-3.jpg);
+  padding: 80px;
   display: flex;
   align-items: center;
 }
@@ -21954,7 +21955,7 @@ iframe {
   transition: 0.3s;
 }
 .tmp-get-in-touch-area .section-inner::after {
-  content: "Call Us";
+  content: "Email Us";
   position: absolute;
   display: flex;
   align-items: center;
@@ -31210,7 +31211,7 @@ body.tmp-body-star::before {
 .demo-construction {
   --color-primary: #290a81;
   --color-secondary: #290a81;
-  --shadow-7: 0 0 20px 5px rgb(255 94 20 / 31%);
+  --shadow-7: 0 0 20px 5px rgba(41 10 129 / 31%);
 }
 .demo-construction .demo-banner-area-start-solar {
   position: relative;
@@ -31271,7 +31272,7 @@ body.tmp-body-star::before {
   background-image: url(../images/bg/18.webp);
 }
 .demo-construction .bg_image--27 {
-  background-image: url(../images/bg/17.webp);
+  background-image: url(../img/home-1.jpg);
 }
 .demo-construction .demo-banner-area-start-solar {
   margin: 0px 0px 0 0px;
