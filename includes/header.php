@@ -80,7 +80,7 @@
                 </div>
             </div>
         </div>
-        <header class="tmp-header header-default header-left-align header-sticky-smooth header-sticky">
+        <header class="tmp-header header-default header-left-   align header-sticky-smooth header-sticky">
             <div class="container position-relative">
 
                 <div class="row align-items-center">
@@ -101,9 +101,9 @@
                                                 <ul class="submenu">
                                                     <?php foreach ($value as $subkey => $subvalue) { ?>
                                                         <li><a
-                                                                href="?<?= $isEn ? 'lang=en&page=service&service=' . $subkey : 'página=servicio&servicio=' . $subkey; ?>"><?= $subvalue; ?></a>
+                                                                href="?<?= $isEn ? 'lang=en&page=what-we-do&service=' . $subkey : 'página=lo-qué-hacemos&servicio=' . $subkey; ?>"><?= $subvalue; ?></a>
                                                         </li>
-                                                    <?php } ?>
+                                                    <?php } ?>  
                                                 </ul>
                                             </li>
                                         <?php } else { ?>
