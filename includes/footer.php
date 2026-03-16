@@ -112,7 +112,36 @@
 
 </main>
 
-
+<div class="modal fade" id="cookieModal" tabindex="-1" role="dialog" aria-labelledby="cookieModalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="cookie-content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3> <?= $isEn ? "Your privacy is important to us" : "Tu privacidad es importante para nosotros" ?></h3>
+                            </h3>
+                            <p><?= $isEn ? 'We use cookies and similar technologies to improve your browsing experience, analyze site traffic, and provide you with content tailored to your interests. By clicking <b>"Accept all"</b>, you consent to the use of all cookies. You can also set your preferences or decline non-essential preferences at any time.' : 'Utilizamos cookies y tecnologías similares para mejorar tu experiencia de navegación, analizar el tráfico del sitio y ofrecerte contenido personalizado de acuerdo con tus intereses. Al hacer clic en <b>“Aceptar todas”</b>, consientes el uso de todas las cookies. También puedes configurar tus preferencias o rechazar las no esenciales en cualquier momento.' ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="butn-style02" data-dismiss="modal"
+                    data-bs-dismiss="modal"><?= $isEn ? "Accept all" : "Aceptar todas" ?></button>
+                <button type="button" class="butn-style02" data-dismiss="modal"
+                    data-bs-dismiss="modal"><?= $isEn ? "Reject" : "Rechazar" ?></button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -167,9 +196,24 @@
 
 <script src="assets/js/plugins/jaralax.js" defer=""></script>
 <script src="assets/js/plugins/scroll-elements.js" defer=""></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- Main JS -->
 <script src="assets/js/main.js" defer=""></script>
+<script>
+    $(document).ready(function () {
+        $('#cookieModal').modal('show');
+        // let cookies = localStorage.getItem('cookies');
+
+        // if (localStorage.getItem('cookies') == '0' || localStorage.getItem('cookies')) {
+        // 	// localStorage.setItem('cookies', false);
+        // } else {
+        // 	$('#cookieModal').modal('show');
+        // 	localStorage.setItem('cookies', '0');
+        // }
+    });
+</script>
 </body>
 
 </html>

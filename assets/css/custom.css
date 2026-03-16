@@ -131,3 +131,67 @@
 .footer-contact a {
     font-size: 14px;
 }
+.modal-dialog {
+    align-items: end;
+}
+.modal-header {
+    background-color: var(--color-primary);
+    justify-content: end;
+}
+.modal-header button {
+    background: transparent;
+    border:none;
+    font-size: 25px;
+    color: #fff;
+}
+.modal-body {
+    padding: 30px 20px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.modal-body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('../img/cookie.png');
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    opacity: 0.2;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.modal-body > * {
+    position: relative;
+    z-index: 1;
+}
+
+.modal-body h3 {
+    color: var(--color-primary);
+}
+
+.modal-body p {
+    color: #000;
+}
+
+@media (min-width: 768px) {
+    .modal-dialog {
+        max-width: 767px;
+        margin: 1.75rem auto;
+    }
+}
+
+button.butn-style02 {
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+}
+
+button.butn-style02:hover, button.butn-style02:focus {
+    background: #d4cee6;
+    color: #fff;
+}
