@@ -52,19 +52,19 @@ $lang = [
     'how-we-work' => [
         [
             'text' => 'We understand the business and its objectives',
-            'icon' => 'feather-briefcase'
+            'icon' => 'icon-1.png'
         ],
         [
             'text' => 'We design clear and actionable strategies',
-            'icon' => 'feather-lightbulb'
+            'icon' => 'icon-2.png'
         ],
         [
             'text' => 'We implement solutions aligned with the reality of each organization',
-            'icon' => 'feather-settings'
+            'icon' => 'icon-3.png'
         ],
         [
             'text' => 'We measure, analyse, and optimise constantly',
-            'icon' => 'feather-bar-chart'
+            'icon' => 'icon-4.png'
         ]
     ],
     'testimonials' => [
@@ -265,10 +265,25 @@ $lang = [
         ]
     ],
     'what-guides-us' => [
-        'Clarity before complexity',
-        'Strategy before tools',
-        'Data to decide, not to decorate',
-        'People at the center of change',
-        'Sustainable results over time'
+        [
+            'text' => 'Clarity before complexity',
+            'icon' => 'icon-5.png'
+        ],
+        [
+            'text' => 'Strategy before tools',
+            'icon' => 'icon-6.png'
+        ],
+        [
+            'text' => 'Data to decide, not to decorate',
+            'icon' => 'icon-7.png'
+        ],
+        [
+            'text' => 'People at the center of change',
+            'icon' => 'icon-8.png'
+        ],
+        [
+            'text' => 'Sustainable results over time',
+            'icon' => 'icon-9.png'
+        ]
     ]
 ];

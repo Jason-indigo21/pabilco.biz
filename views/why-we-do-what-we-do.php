@@ -200,11 +200,11 @@
                     <?php foreach ($lang['what-guides-us'] as $key => $value): ?>
                         <div class="single-service-wrapper tmponhover">
                             <div class="thumbnail invers-anime">
-                                <img src="assets/images/services/09.webp" alt="service">
+                                <img src="assets/img/icons/<?= $value['icon'] ?>" alt="service">
                             </div>
                             <div class="content">
                                 <h5 class="title">
-                                    <?= $value ?>
+                                    <?= $value['text'] ?>
                                 </h5>
                             </div>
                         </div>

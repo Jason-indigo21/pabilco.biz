@@ -7,7 +7,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                     <div class="tmp-footer-widget">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="<?= $isEn ? '?lang=en' : './' ?>">
                                 <img class="logo-light" src="assets/img/logo.png" alt="Pabilco, S.A. Logo">
                                 <img class="logo-dark" src="assets/img/logo.png" alt="Pabilco, S.A. Logo">
                             </a>
