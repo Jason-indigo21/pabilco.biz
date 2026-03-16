@@ -203,15 +203,15 @@
 <script src="assets/js/main.js" defer=""></script>
 <script>
     $(document).ready(function () {
-        $('#cookieModal').modal('show');
-        // let cookies = localStorage.getItem('cookies');
+        // $('#cookieModal').modal('show');
+        let cookies = localStorage.getItem('cookies');
 
-        // if (localStorage.getItem('cookies') == '0' || localStorage.getItem('cookies')) {
-        // 	// localStorage.setItem('cookies', false);
-        // } else {
-        // 	$('#cookieModal').modal('show');
-        // 	localStorage.setItem('cookies', '0');
-        // }
+        if (localStorage.getItem('cookies') == '0' || localStorage.getItem('cookies')) {
+        	// localStorage.setItem('cookies', false);
+        } else {
+        	$('#cookieModal').modal('show');
+        	localStorage.setItem('cookies', '0');
+        }
     });
 </script>
 </body>
