@@ -22,31 +22,36 @@ $lang = [
             'title' => 'Estrategia y Gestión de Marketing Digital',
             'content' => 'Diseñamos y gestionamos estrategias de marketing digital alineadas con el negocio, enfocadas en la visibilidad, la generación de oportunidades y el retorno de la inversión.',
             'button' => 'Conoce el servicio',
-            'image' => 'service-1.jpg'
+            'image' => 'service-1.jpg',
+            'link' => '?página=lo-qué-hacemos&service=estrategia-y-gestion-de-marketing-digital'
         ],
         'consultoría-en-gestión-empresarial' => [
             'title' => 'Consultoría en Gestión Empresarial',
             'content' => 'Fortalecemos la gestión, la planificación y la toma de decisiones para mejorar el rendimiento organizacional y acompañar los procesos de cambio y crecimiento.',
             'button' => 'Optimizar la gestión',
-            'image' => 'service-2.jpg'
+            'image' => 'service-2.jpg',
+            'link' => '?página=lo-qué-hacemos&service=consultoria-en-gestion-empresarial'
         ],
         'adquisición-de-clientes-y-gestión-del-crecimiento' => [
             'title' => 'Adquisición de Clientes y Gestión del Crecimiento',
             'content' => 'Creamos estrategias escalables para atraer, convertir y fidelizar clientes, integrando marketing, ventas y análisis de datos.',
             'button' => 'Impulsar el crecimiento',
-            'image' => 'service-3.jpg'
+            'image' => 'service-3.jpg',
+            'link' => '?página=lo-qué-hacemos&service=adquisicion-de-clientes-y-gestion-del-crecimiento'
         ],
         'crm-y-automatización-de-marketing' => [
             'title' => 'CRM y Automatización de Marketing',
             'content' => 'Implementamos y optimizamos sistemas CRM y automatizaciones para mejorar la eficiencia comercial, la personalización y la experiencia del cliente.',
             'button' => 'Optimizar mi CRM',
-            'image' => 'service-4.jpg'
+            'image' => 'service-4.jpg',
+            'link' => '?página=lo-qué-hacemos&service=crm-y-automatizacion-de-marketing'
         ],
         'análisis-digital-e-inteligencia-de-marketing' => [
             'title' => 'Análisis Digital e Inteligencia de Marketing',
             'content' => 'Transformamos datos en insights accionables para tomar mejores decisiones y maximizar el retorno de la inversión.',
             'button' => 'Decidir con datos',
-            'image' => 'service-5.jpg'
+            'image' => 'service-5.jpg',
+            'link' => '?página=lo-qué-hacemos&service=analisis-digital-e-inteligencia-de-marketing'
         ]
     ],
     'how-we-work' => [

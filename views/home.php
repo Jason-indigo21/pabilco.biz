@@ -125,14 +125,14 @@
                     <div class="tmp-card box-card-style-default bentostyle-left-blog tmponhover mb--30">
                         <div class="inner">
                             <div class="thumbnail invers-anime">
-                                <a class="image" href="#">
+                                <a class="image" href="<?= $services[$i]['link'] ?>">
                                     <img loading="lazy" class="w-100 home-service-1-2" src="assets/img/services/<?= $services[$i]['image']; ?>"
                                         alt="<?= $services[$i]['title']; ?>">
                                 </a>
                             </div>
                             <div class="content">
                                 <h4 class="title">
-                                    <a href="#">
+                                    <a href="<?= $services[$i]['link'] ?>">
                                         <?= $services[$i]['title']; ?>
                                     </a>
                                 </h4>
@@ -140,7 +140,7 @@
                                     <?= $services[$i]['content']; ?>
                                 </p>
                                 <div class="read-more-btn">
-                                    <a class="btn-read-more" href="#">
+                                    <a class="btn-read-more" href="<?= $services[$i]['link'] ?>">
                                         <span>
                                             <?= $services[$i]['button']; ?>
                                         </span>
@@ -156,20 +156,20 @@
                     <div class="tmp-card box-card-style-default card-list-view bentostyle tmponhover">
                         <div class="inner">
                             <div class="thumbnail invers-anime">
-                                <a class="image" href="#">
+                                <a class="image" href="<?= $services[$i]['link'] ?>">
                                     <img loading="lazy" src="assets/img/services/<?= $services[$i]['image']; ?>"
                                         alt="<?= $services[$i]['title']; ?>">
                                 </a>
                             </div>
                             <div class="content">
                                 <h4 class="title">
-                                    <a href="#"><?= $services[$i]['title']; ?></a>
+                                    <a href="<?= $services[$i]['link'] ?>"><?= $services[$i]['title']; ?></a>
                                 </h4>
                                 <p class="descriptiion">
                                     <?= $services[$i]['content']; ?>
                                 </p>
                                 <div class="read-more-btn">
-                                    <a class="btn-read-more" href="#">
+                                    <a class="btn-read-more" href="<?= $services[$i]['link'] ?>">
                                         <span><?= $services[$i]['button']; ?></span>
                                     </a>
                                 </div>

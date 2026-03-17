@@ -22,31 +22,36 @@ $lang = [
             'title' => 'Digital Marketing Strategy and Management',
             'content' => 'We design and manage digital marketing strategies aligned with the business, with a focus on visibility, lead generation, and return on investment.',
             'button' => 'Get to know the service',
-            'image' => 'service-1.jpg'
+            'image' => 'service-1.jpg',
+            'link' => '?page=what-we-do&lang=en&service=digital-marketing-strategy-and-management'
         ],
         'business-management-consulting' => [
             'title' => 'Business Management Consulting',
             'content' => 'We strengthen management, planning, and decision-making to improve organizational performance and support change and growth.',
             'button' => 'Optimize management',
-            'image' => 'service-2.jpg'
+            'image' => 'service-2.jpg',
+            'link' => '?page=what-we-do&lang=en&service=business-management-consulting'
         ],
         'customer-acquisition-&-growth-management' => [
             'title' => 'Customer Acquisition & Growth Management',
             'content' => 'We create scalable strategies to attract, convert, and retain customers, integrating marketing, sales, and data analysis.',
             'button' => 'Drive Growth',
-            'image' => 'service-3.jpg'
+            'image' => 'service-3.jpg',
+            'link' => '?page=what-we-do&lang=en&service=customer-acquisition-and-growth-management'
         ],
         'crm-&-marketing-automation' => [
             'title' => 'CRM & Marketing Automation',
             'content' => 'We implement and optimize CRM and automation systems to improve business efficiency, personalization, and customer experience.',
             'button' => 'Optimize my CRM',
-            'image' => 'service-4.jpg'
+            'image' => 'service-4.jpg',
+            'link' => '?page=what-we-do&lang=en&service=crm-and-marketing-automation'
         ],
         'digital-analytics-&-marketing-intelligence' => [
             'title' => 'Digital Analytics & Marketing Intelligence',
             'content' => 'We transform data into actionable insights to make better decisions and maximize return on investment.',
             'button' => 'Decide with data',
-            'image' => 'service-5.jpg'
+            'image' => 'service-5.jpg',
+            'link' => '?page=what-we-do&lang=en&service=digital-analytics-&-marketing-intelligence'
         ]
     ],
     'how-we-work' => [
