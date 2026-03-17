@@ -27,7 +27,7 @@
                                         <li><a
                                                 href="?<?= $isEn ? 'lang=en&page=' . $key : 'página=' . $key; ?>"><?= $value; ?></a>
                                         </li>
-                                    <?php }
+                                <?php }
                                 }
                                 ?>
                             </ul>
@@ -46,7 +46,7 @@
                                                     href="?<?= $isEn ? 'lang=en&page=' . $subkey : 'página=' . $subkey; ?>"><?= $subvalue; ?></a>
                                             </li>
                                         <?php } ?>
-                                    <?php }
+                                <?php }
                                 }
                                 ?>
                             </ul>
@@ -202,17 +202,75 @@
 <!-- Main JS -->
 <script src="assets/js/main.js" defer=""></script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         // $('#cookieModal').modal('show');
         let cookies = localStorage.getItem('cookies');
 
         if (localStorage.getItem('cookies') == '0' || localStorage.getItem('cookies')) {
-        	// localStorage.setItem('cookies', false);
+            // localStorage.setItem('cookies', false);
         } else {
-        	$('#cookieModal').modal('show');
-        	localStorage.setItem('cookies', '0');
+            $('#cookieModal').modal('show');
+            localStorage.setItem('cookies', '0');
         }
     });
+</script>
+<script>
+    generate();
+    $(document).ready(function() {
+        generate();
+    })
+
+    let captcha;
+
+    function generate() {
+
+        // Clear old input
+        document.getElementById("submit").value = "";
+
+        // Access the element to store
+        // the generated captcha
+        // captcha = document.getElementById("captcha");
+        captchaInput = document.getElementById("captchandler");
+        let uniquechar = "";
+
+        const randomchar = "ABCDEFGHiJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz123456789";
+
+        // Generate captcha for length of
+        // 5 with random character
+        for (let i = 1; i < 7; i++) {
+            uniquechar += randomchar.charAt(
+                Math.random() * randomchar.length)
+        }
+        console.log(uniquechar)
+        // Store generated input
+        // captcha.innerHTML = uniquechar;
+        captchaInput.value = uniquechar;
+
+    }
+
+    function printmsg() {
+        let msgOpening = "";
+        let msgAgent = "";
+        const usr_input = document
+            .getElementById("submit").value;
+
+        // Check whether the input is equal
+        // to generated captcha or not
+        if (usr_input == captchaInput.value) {
+            let s = document.getElementById("key").innerHTML = '<p style="color: #c50a25; font-size: 16px;padding: 1px 10px;background: #fff;width: fit-content; border-radius: 5px;"><i class="fas fa-check-circle"></i> Matched</p>';
+
+
+            $('.submit-button').prop('disabled', false);
+            document.getElementById("captcha_mail").value = captchaInput.value;
+            document.getElementById("btnCheck").disabled = true;
+            generate();
+        } else {
+            let s = document.getElementById("key")
+                .innerHTML = '<p style="color: red; font-size: 16px;padding: 1px 10px;background: #fff;width: fit-content; border-radius: 5px;"><i class="fas fa-exclamation-circle"></i> INCORRECT CAPTCHA</p>';
+
+            generate();
+        }
+    }
 </script>
 </body>
 

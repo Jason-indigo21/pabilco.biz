@@ -15,7 +15,7 @@ function maskTokenForDebug($token) {
 }
 
 // ===== SECURITY CONFIGURATION =====
-$MAX_REQUESTS_PER_HOUR = 50;  // Max emails from same IP per hour
+$MAX_REQUESTS_PER_HOUR = 5;  // Max emails from same IP per hour
 $MIN_TIME_BETWEEN_REQUESTS = 5;  // Minimum seconds between requests
 $MAX_MESSAGE_LENGTH = 5000;
 $MAX_NAME_LENGTH = 100;
@@ -274,15 +274,15 @@ elseif (!checkRateLimit()) {
         $subjectJson = json_encode($subject);
         
         $adminEmailData = '{
-          "From":"support@indigo21.com",
-          "To": "jason.vergara@indigo21.com",   
+          "From":"'.$ADMIN_EMAIL.'",
+          "To": "'.$ADMIN_EMAIL.'",   
           "Subject": ' . $subjectJson . ',
           "HtmlBody": ' . $data . ',
           "MessageStream": "outbound"
         }';
         
         $clientEmailData = '{
-          "From":"support@indigo21.com",
+          "From":"'.$ADMIN_EMAIL.'",
           "To": "' . $clientEmail . '",
           "Subject": "We have received your email!",
           "HtmlBody": "Hi ' . htmlspecialchars($name) . ' , <br><br> Your email has been received and as soon as an agent is available they will contact you. <br><br> Regards, <br>' . $companyName . '",

@@ -110,16 +110,23 @@ function validateInputs(&$inputs) {
         $errors[] = 'Invalid name';
     }
     
-    // Surname validation
-    if (empty($inputs['surname']) || strlen($inputs['surname']) > 100) {
-        $errors[] = 'Invalid surname';
+    // Subject validation
+    if (empty($inputs['subject']) || strlen($inputs['subject']) > 100) {
+        $errors[] = 'Invalid subject';
     }
     
-    // Service validation
-    if (empty($inputs['service']) || strlen($inputs['service']) > 200) {
-        $errors[] = 'Invalid service';
+    // Phone validation
+    if (empty($inputs['phone']) || strlen($inputs['phone']) > 20) {
+        $errors[] = 'Invalid phone number';
     }
     
+    if (empty($inputs['appointment-date']) || !preg_match('/^\d{4}-\d{2}-\d{2}$/', $inputs['appointment-date'])) {
+        $errors[] = 'Invalid appointment date';
+    }
+
+    if (empty($inputs['appointment-time']) || !preg_match('/^\d{2}:\d{2}$/', $inputs['appointment-time'])) {
+        $errors[] = 'Invalid appointment time';
+    } 
     // Email validation
     if (empty($inputs['email']) || !preg_match($GLOBALS['EMAIL_REGEX'], $inputs['email'])) {
         $errors[] = 'Invalid email address';
@@ -279,18 +286,18 @@ elseif (!checkRateLimit()) {
         $subjectJson = json_encode($subject);
         
         $adminEmailData = '{
-          "From":"support@indigo21.com",
-          "To": "jason.vergara@indigo21.com",   
+          "From":"'.$ADMIN_EMAIL.'",
+          "To": "'.$ADMIN_EMAIL.'",   
           "Subject": ' . $subjectJson . ',
           "HtmlBody": ' . $data . ',
           "MessageStream": "outbound"
         }';
         
         $clientEmailData = '{
-          "From":"support@indigo21.com",
+          "From":"'.$ADMIN_EMAIL.'",
           "To": "' . $clientEmail . '",
           "Subject": "We have received your email!",
-          "HtmlBody": "Hi ' . htmlspecialchars($firstname) . ' , <br><br> Your email has been received and as soon as an agent is available they will contact you. <br><br> Regards, <br>' . $companyName . '",
+          "HtmlBody": "Hi ' . htmlspecialchars($name) . ' , <br><br> Your email has been received and as soon as an agent is available they will contact you. <br><br> Regards, <br>' . $companyName . '",
           "MessageStream": "outbound"
         }';
         
@@ -332,9 +339,32 @@ function sendEmailViaPostmark($emailData, $apiKey) {
     return ($httpCode >= 200 && $httpCode < 300);
 }
 
+if (isset($_POST['lang'])) {
+    $postLang = strtolower(trim((string) $_POST['lang']));
+    if (in_array($postLang, array('en', 'es'), true)) {
+        $lang = $postLang;
+    }
+} elseif (isset($_GET['lang'])) {
+    $getLang = strtolower(trim((string) $_GET['lang']));
+    if (in_array($getLang, array('en', 'es'), true)) {
+        $lang = $getLang;
+    }
+} elseif (!empty($_SERVER['HTTP_REFERER'])) {
+    $refQuery = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_QUERY);
+    if ($refQuery) {    
+        parse_str($refQuery, $refParams);
+        if (isset($refParams['lang'])) {
+            $refLang = strtolower(trim((string) $refParams['lang']));
+            if (in_array($refLang, array('en', 'es'), true)) {
+                $lang = $refLang;
+            }
+        }
+    }
+}
+
 // Redirect with status
-// header("Location: ./?page=begin&email-sent=" . $statusCode . ($errorMessage ? "&error=" . urlencode($errorMessage) : ""));
-// exit;
-header('Content-Type: application/json');
-echo json_encode(array('status' => $statusCode, 'error' => $errorMessage, 'debug' => $debugInfo));
+header("Location: ./?page=online-agenda&&lang=" . urlencode($lang) . "&email-sent=" . $statusCode . ($errorMessage ? "&error=" . urlencode($errorMessage) : ""));
+exit;
+// header('Content-Type: application/json');
+// echo json_encode(array('status' => $statusCode, 'error' => $errorMessage, 'debug' => $debugInfo));
 ?>
