@@ -161,6 +161,17 @@
     <span><a href="#">Scroll to top</a></span>
 </div>
 
+<?php
+if ($_REQUEST['email-sent'] == 'success') {
+    echo '<script>
+				Swal.fire({
+				icon: "success",
+				title: "Message sent",
+				showConfirmButton: false,
+				timer: 1500    })
+     		 </script>';
+}
+?>
 
 
 <!-- JS

@@ -29,6 +29,8 @@
     <link href="assets/css/plugins/odometer.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css?v=4.3.1">
     <link rel="stylesheet" href="assets/css/custom.css">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body class="demo-construction active-light-mode">
     <main class="page-wrapper">
