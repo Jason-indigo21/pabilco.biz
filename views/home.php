@@ -74,8 +74,8 @@
 
 <div class="sticky-wrapper-about-fluid">
     <!-- about area fluid start -->
-    <div class="tmp-about-area-fluid">
-        <div class="container-fluid">
+    <div>
+        <div class="container">
             <div class="row g-0 align-items-center">
                 <div class="col-lg-6">
                     <div class="why-choose-us-thumbnail invers-anime">
