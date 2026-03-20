@@ -70,11 +70,11 @@
                                 }
                             ?>
                             <ul class="language list-unstyled d-flex align-items-center mb-0">
-                                <li><a href="<?= htmlspecialchars($enUrl) ?>"><img src="assets/img/en.jpg" alt="English"
-                                            style="width: 40px;"></a></li>
+                                <li><a href="<?= htmlspecialchars($esUrl) ?>">ES</a></li>
                                 <li>|</li>
-                                <li><a href="<?= htmlspecialchars($esUrl) ?>"><img src="assets/img/es.jpg" alt="Spanish"
-                                            style="width: 40px;height: 25px;"></a></li>
+                                <li><a href="<?= htmlspecialchars($enUrl) ?>">EN</a></li>
+                                
+                                
                             </ul>
                         </div>
                     </div>

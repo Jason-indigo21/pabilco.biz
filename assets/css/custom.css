@@ -24,6 +24,10 @@
     margin-right: 70px;
 }
 
+.language li a:hover, .language li a:focus {
+    color: #fff;
+    text-decoration: underline;
+}
 /* HOME */
 .home-img-1 img {
     border-radius: 10px;
